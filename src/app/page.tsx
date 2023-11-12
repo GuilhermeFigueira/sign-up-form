@@ -20,6 +20,7 @@ export default function Home() {
 								alt={
 									"Graphics, computers and numbers illustration "
 								}
+								priority
 							/>
 						</div>
 						<div className="hidden lg:block">
@@ -28,6 +29,7 @@ export default function Home() {
 								alt={
 									"Graphics, computers and numbers illustration "
 								}
+								priority
 							/>
 						</div>
 					</section>
@@ -55,7 +57,13 @@ export default function Home() {
 								<p>And much more!</p>
 							</div>
 						</div>
-						<form action="" className="flex flex-col gap-4">
+						<form
+							action=""
+							className="flex flex-col gap-4"
+							onSubmit={(e) => {
+								e.preventDefault();
+							}}
+						>
 							<div className="flex flex-col gap-2  ">
 								<label
 									className="text-xs text-grey-slate font-bold"
@@ -71,16 +79,34 @@ export default function Home() {
 							</div>
 							<button
 								onClick={() => setIsSuccess(false)}
-								className="text-white bg-grey-slate rounded-lg font-bold p-4 hover:bg-gradient-to-r hover:from-[hsl(347,100%,66%)] hover:to-[hsl(14,100%,62%)] hover:shadow-lg hover:shadow-tomato/60"
+								className="text-white bg-grey-slate rounded-lg font-bold p-4 hover:bg-gradient-to-r hover:from-[hsl(347,100%,66%)] hover:to-[hsl(14,100%,62%)] hover:shadow-lg hover:shadow-tomato/60 transition-all hover:transition-all duration-300"
 							>
 								Subscribe to monthly newsletter
 							</button>
+							<div className="text-center pt-4 justify-self-end">
+								Challenge by{" "}
+								<a
+									href="https://www.frontendmentor.io?ref=challenge"
+									target="_blank"
+								>
+									Frontend Mentor
+								</a>
+								. Coded by{" "}
+								<a
+									href="https://github.com/guilhermefigueira"
+									target="_blank"
+									className="text-transparent bg-clip-text bg-gradient-to-r from-rose-700 to-sky-700 font-bold hover:text-lg hover:tracking-widest transition-all "
+								>
+									Guilherme Figueira
+								</a>
+								.
+							</div>
 						</form>
 					</section>
 				</div>
 			) : (
-				<div className="flex flex-col bg-white h-screen justify-center px-6 py-10 rounded-3xl lg:p-4">
-					<div className="m-auto">
+				<div className="flex flex-col bg-white h-screen justify-center px-6 py-10 rounded-3xl lg:p-10 max-w-lg lg:h-auto lg:gap-6 ">
+					<div className="m-auto ">
 						<Image src={icon_success} alt="Success icon" />
 						<h1 className="text-grey-slate text-4xl font-bold py-4 lg:text-6xl">
 							Thanks for subscribing!
@@ -93,10 +119,28 @@ export default function Home() {
 					</div>
 					<button
 						onClick={() => setIsSuccess(true)}
-						className=" text-white bg-grey-slate rounded-lg font-bold p-4 hover:bg-gradient-to-r hover:from-[hsl(347,100%,66%)] hover:to-[hsl(14,100%,62%)] hover:shadow-lg hover:shadow-tomato/60"
+						className=" text-white bg-grey-slate rounded-lg font-bold p-4 hover:bg-gradient-to-r hover:from-[hsl(347,100%,66%)] hover:to-[hsl(14,100%,62%)] hover:shadow-lg hover:shadow-tomato/60 transition-all hover:transition-all duration-300"
 					>
 						Dismiss message
 					</button>
+					<div className="text-center pt-4 justify-self-end">
+						Challenge by{" "}
+						<a
+							href="https://www.frontendmentor.io?ref=challenge"
+							target="_blank"
+						>
+							Frontend Mentor
+						</a>
+						. Coded by{" "}
+						<a
+							href="https://github.com/guilhermefigueira"
+							target="_blank"
+							className="text-transparent bg-clip-text bg-gradient-to-r from-rose-700 to-sky-700 font-bold hover:text-lg hover:tracking-widest transition-all "
+						>
+							Guilherme Figueira
+						</a>
+						.
+					</div>
 				</div>
 			)}
 		</main>
